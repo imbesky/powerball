@@ -7,8 +7,8 @@ import java.util.Random;
 public class BoughtPowerBall {
     private static final int DEFAULT_MULTIPLIER_NUMBER = 1;
     private static final List<Integer> POWER_PLAY = Arrays.asList(2, 3, 4, 5, 10);
-    private final WhiteBall whiteBalls = new WhiteBall();
-    private final RedPowerBall redPowerBall = new RedPowerBall();
+    private final WhiteBall whiteBalls = WhiteBall.createWhiteBalls();
+    private final RedPowerBall redPowerBall = RedPowerBall.createRedPowerBall();
     private final int multiplierNumber;
 
     public BoughtPowerBall(final boolean isPowerPlay) {
@@ -21,15 +21,15 @@ public class BoughtPowerBall {
     }
 
     public List<Integer> whiteBallsDetail() {
-        return whiteBalls.inquireDetails();
+        return whiteBalls.numbers();
     }
 
     public int redPowerBallDetail() {
-        return redPowerBall.inquireDetail();
+        return redPowerBall.number();
     }
 
-    public int wonPrice(final int price) {
-        return multiplierNumber * price;
+    public int multiplyRate() {
+        return multiplierNumber;
     }
 
 }

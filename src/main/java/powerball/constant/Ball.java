@@ -14,8 +14,6 @@ public enum Ball {
         this.properLength = properLength;
     }
 
-    public static final int INDEX_DIFFERENCE = 1;
-
     public int getMin() {
         return min;
     }

@@ -10,11 +10,17 @@ import powerball.exception.NotNumericException;
 
 public class Purchase {
     private final int powerBallPrice;
-    private int powerPlayPrice;
+    private final int powerPlayPrice;
 
-    public Purchase(final String powerBallPrice) {
+    public Purchase(final String powerBallPrice, final String powerPlayPrice) {
         validatePowerBallPrice(powerBallPrice);
         this.powerBallPrice = Integer.parseInt(powerBallPrice);
+        validatePowerPlayPrice(powerBallPrice);
+        this.powerPlayPrice = Integer.parseInt(powerBallPrice);
+    }
+
+    public static Purchase from(final PurchaseDto purchaseDto) {
+        return new Purchase(purchaseDto.powerBallPrice(), purchaseDto.powerPlayPrice());
     }
 
     private void validatePowerBallPrice(final String price) {
@@ -29,11 +35,6 @@ public class Purchase {
         if (price % POWER_BALL.priceUnit() != PROPER_REMAINDER) {
             throw new InvalidPurchaseException();
         }
-    }
-
-    public void doPowerPlay(final String input) {
-        validatePowerPlayPrice(input);
-        powerPlayPrice = Integer.parseInt(input);
     }
 
     private void validatePowerPlayPrice(final String price) {
@@ -53,15 +54,12 @@ public class Purchase {
         }
     }
 
-    public PurchaseDto toPurchaseDto() {
-        return PurchaseDto.of(boughtPowerBallNumber(), boughtPowerPlayNumber());
-    }
-
-    private int boughtPowerBallNumber() {
+    public int boughtPowerBallNumber() {
         return powerBallPrice / POWER_BALL.priceUnit();
     }
 
-    private int boughtPowerPlayNumber() {
+    public int boughtPowerPlayNumber() {
         return powerPlayPrice / POWER_PLAY.priceUnit();
     }
+
 }
