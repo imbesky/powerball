@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>
+    파워볼 판매점에 오신 것을 환영합니다!
+</h2>
+<form action="/purchase" method="get">
+    <div>
+        <label for="powerBallPrice">파워볼 구매 금액을 입력해 주세요(단위: 달러).</label>
+        <input name="powerBallPrice" id="powerBallPrice" type="text"
+               placeholder="파워볼 구매 금액은 2달러 단위로만 입력할 수 있습니다.">
+    </div>
+    <div>
+        <label for="powerPlayPrice">파워 플레이 금액을 입력해 주세요(단위: 달러).</label>
+        <input name="powerPlayPrice" id="powerPlayPrice" type="text"
+               placeholder="파워 플레이 금액은 1달러 단위로만 입력할 수 있으며 파워 플레이 횟수는 파워볼 구매 수량을 초과할 수 없습니다.">
+    </div>
+    <div>
+        <input type="submit" value="결제하기">
+    </div>
+</form>
+</body>
+</html>
