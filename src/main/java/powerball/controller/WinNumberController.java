@@ -24,7 +24,7 @@ public class WinNumberController {
         } catch (PowerBallException exception) {
             return exception.errorPage();
         }
-        return "/bought";
+        return "/result";
     }
 
     @GetMapping("/exception")

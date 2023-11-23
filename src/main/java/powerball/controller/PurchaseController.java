@@ -24,7 +24,7 @@ public class PurchaseController {
         } catch (PowerBallException exception) {
             return exception.errorPage();
         }
-        return "/bought";
+        return "/check";
     }
 
     @GetMapping("/exception")
