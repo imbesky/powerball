@@ -1,5 +1,7 @@
 package powerball.util;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -17,6 +19,8 @@ public class RandomUtil {
         while (numbers.size() != length) {
             numbers.add(random.nextInt(max) + min);
         }
-        return numbers.stream().toList();
+        final List<Integer> integers = new ArrayList<>(numbers);
+        Collections.sort(integers);
+        return integers;
     }
 }
