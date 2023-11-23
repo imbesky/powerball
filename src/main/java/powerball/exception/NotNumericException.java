@@ -1,10 +1,17 @@
 package powerball.exception;
 
-import static powerball.constant.ErrorMessage.ERROR_PREFIX;
-import static powerball.constant.ErrorMessage.NOT_NUMERIC;
+import static powerball.constant.Exception.NOT_NUMERIC;
 
-public class NotNumericException extends IllegalArgumentException {
+import powerball.constant.Exception;
+
+public class NotNumericException extends PowerBallException {
+    private static final Exception TYPE = NOT_NUMERIC;
+
     public NotNumericException() {
-        super(ERROR_PREFIX.concat(NOT_NUMERIC));
+        super(TYPE.getMessage());
+    }
+
+    public String errorPage() {
+        return TYPE.getUrl();
     }
 }

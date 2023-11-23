@@ -1,10 +1,17 @@
 package powerball.exception;
 
-import static powerball.constant.ErrorMessage.ERROR_PREFIX;
-import static powerball.constant.ErrorMessage.INVALID_LENGTH;
+import static powerball.constant.Exception.INVALID_LENGTH;
 
-public class InvalidLengthException extends IllegalArgumentException {
+import powerball.constant.Exception;
+
+public class InvalidLengthException extends PowerBallException {
+    private static final Exception TYPE = INVALID_LENGTH;
+
     public InvalidLengthException() {
-        super(ERROR_PREFIX.concat(INVALID_LENGTH));
+        super(TYPE.getMessage());
+    }
+
+    public String errorPage() {
+        return TYPE.getUrl();
     }
 }

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<div>
+    <div>
+        <h2 th:text="'오류! ' + ${message}"></h2>
+    </div>
+    <div>
+        <a href="redirect:/">다시 입력하기</a>
+    </div>
+</div>
+</body>
+</html>

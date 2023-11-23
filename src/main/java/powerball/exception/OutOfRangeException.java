@@ -1,10 +1,17 @@
 package powerball.exception;
 
-import static powerball.constant.ErrorMessage.ERROR_PREFIX;
-import static powerball.constant.ErrorMessage.OUT_OF_RANGE;
+import static powerball.constant.Exception.OUT_OF_RANGE;
 
-public class OutOfRangeException extends IllegalArgumentException {
+import powerball.constant.Exception;
+
+public class OutOfRangeException extends PowerBallException {
+    private static final Exception TYPE = OUT_OF_RANGE;
+
     public OutOfRangeException() {
-        super(ERROR_PREFIX.concat(OUT_OF_RANGE));
+        super(TYPE.getMessage());
+    }
+
+    public String errorPage() {
+        return TYPE.getUrl();
     }
 }

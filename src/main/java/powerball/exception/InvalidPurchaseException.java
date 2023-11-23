@@ -1,10 +1,17 @@
 package powerball.exception;
 
-import static powerball.constant.ErrorMessage.ERROR_PREFIX;
-import static powerball.constant.ErrorMessage.INVALID_PURCHASE;
+import static powerball.constant.Exception.INVALID_PURCHASE;
 
-public class InvalidPurchaseException extends IllegalArgumentException {
+import powerball.constant.Exception;
+
+public class InvalidPurchaseException extends PowerBallException {
+    private static final Exception TYPE = INVALID_PURCHASE;
+
     public InvalidPurchaseException() {
-        super(ERROR_PREFIX.concat(INVALID_PURCHASE));
+        super(TYPE.getMessage());
+    }
+
+    public String errorPage() {
+        return TYPE.getUrl();
     }
 }
