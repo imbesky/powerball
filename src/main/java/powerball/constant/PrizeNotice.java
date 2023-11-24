@@ -14,7 +14,7 @@ public enum PrizeNotice {
     SIXTH(6, "화이트볼 3개 일치 (7달러) - %d개"),
     SEVENTH(7, "화이트볼 2개 일치, 레드 파워볼 일치 (7달러) - %d개"),
     EIGHTH(8, "화이트볼 1개 일치, 레드 파워볼 일치 (4달러) - %d개"),
-    NINTH(9, "레드 파워볼 일치 (4달러) - %d개");;
+    NINTH(9, "레드 파워볼 일치 (4달러) - %d개");
     private final int grade;
     private final String notice;
 
