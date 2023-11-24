@@ -2,18 +2,9 @@
 <html lang="kr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Check</title>
+    <title>Winning Number Input</title>
 </head>
 <body>
-<h2 th:text="${purchaseResult}"></h2>
-<div>
-    <div th:each="boughtBall : ${boughtBalls}">
-        <h4 th:text="${String.format(ballsFormat,
-        boughtBall.whiteBallsDetail(),
-        boughtBall.redPowerBallDetail(),
-        boughtBall.multiplyRate())}"></h4>
-    </div>
-</div>
 <h2 th:text="${header}"></h2>
 <form action="/win-input" method="get">
     <div>

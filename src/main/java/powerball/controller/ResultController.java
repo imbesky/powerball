@@ -21,7 +21,7 @@ public class ResultController {
         this.resultService = resultService;
     }
 
-    @GetMapping("/check")
+    @GetMapping("/purchase-result")
     public void boughtResult(final Model model) {
         final PurchaseResultDto purchaseResult = resultService.purchaseResult();
         model.addAttribute("purchaseResult", String.format(

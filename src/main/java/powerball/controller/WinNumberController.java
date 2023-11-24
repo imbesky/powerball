@@ -21,7 +21,7 @@ public class WinNumberController {
         this.winNumberInputService = winNumberInputService;
     }
 
-    @GetMapping("/check")
+    @GetMapping("/winning-number")
     public void winNumberInputNotices(final Model model) {
         model.addAttribute("header", WIN_NUMBER_INPUT_HEADER);
         model.addAttribute("whiteBallNotice", INPUT_WHITE_BALL);

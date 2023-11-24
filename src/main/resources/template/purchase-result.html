@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+<h2 th:text="${purchaseResult}"></h2>
+<div>
+    <div th:each="boughtBall : ${boughtBalls}">
+        <h4 th:text="${String.format(ballsFormat,
+        boughtBall.whiteBallsDetail(),
+        boughtBall.redPowerBallDetail(),
+        boughtBall.multiplyRate())}"></h4>
+    </div>
+</div>
+<a href="/winning-number">
+    <button value="당첨 번호 입력하고 결과 조회하기"></button>
+</a>
+</body>
+</html>
