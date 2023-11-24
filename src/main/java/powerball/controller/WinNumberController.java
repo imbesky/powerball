@@ -1,10 +1,14 @@
 package powerball.controller;
 
+import static powerball.constant.Format.INPUT_EXAMPLE;
+import static powerball.constant.Format.INPUT_RED_POWER_BALL;
+import static powerball.constant.Format.INPUT_WHITE_BALL;
+import static powerball.constant.Format.WIN_NUMBER_INPUT_HEADER;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import powerball.constant.Exception;
 import powerball.domain.dto.WinPowerBallDto;
 import powerball.exception.PowerBallException;
 import powerball.service.WinNumberInputService;
@@ -17,6 +21,14 @@ public class WinNumberController {
         this.winNumberInputService = winNumberInputService;
     }
 
+    @GetMapping("/check")
+    public void winNumberInputNotices(final Model model) {
+        model.addAttribute("header", WIN_NUMBER_INPUT_HEADER);
+        model.addAttribute("whiteBallNotice", INPUT_WHITE_BALL);
+        model.addAttribute("redPowerBallNotice", INPUT_RED_POWER_BALL);
+        model.addAttribute("example", INPUT_EXAMPLE);
+    }
+
     @GetMapping("/win-input")
     public String purchaseInput(@RequestParam final WinPowerBallDto winPowerBallDto) {
         try {
@@ -27,9 +39,4 @@ public class WinNumberController {
         return "/result";
     }
 
-    @GetMapping("/exception")
-    public void handleException(@RequestParam("type") final String type, final Model model) {
-        final Exception exception = Exception.findByType(type);
-        model.addAttribute("message", exception.getMessage());
-    }
 }

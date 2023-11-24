@@ -7,10 +7,10 @@
 <body>
 <div>
     <div>
-        <h2 th:text="'오류! ' + ${message}"></h2>
+        <h2 th:text="${message}"></h2>
     </div>
     <div>
-        <a href="redirect:/">다시 입력하기</a>
+        <a href="redirect:/" th:text="${redirect}"></a>
     </div>
 </div>
 </body>

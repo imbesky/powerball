@@ -5,6 +5,7 @@ import static powerball.constant.Price.POWER_PLAY;
 import static powerball.constant.Price.PROPER_REMAINDER;
 
 import powerball.domain.dto.PurchaseDto;
+import powerball.domain.dto.PurchaseResultDto;
 import powerball.exception.InvalidPurchaseException;
 import powerball.exception.NotNumericException;
 
@@ -60,6 +61,10 @@ public class Purchase {
 
     public int boughtPowerPlayNumber() {
         return powerPlayPrice / POWER_PLAY.priceUnit();
+    }
+
+    public PurchaseResultDto toPurchaseResultDto() {
+        return new PurchaseResultDto(boughtPowerBallNumber(), boughtPowerPlayNumber());
     }
 
 }

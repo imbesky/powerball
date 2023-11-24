@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Power Ball</title>
 </head>
 <body>
-<h2>
-    파워볼 판매점에 오신 것을 환영합니다!
-</h2>
+<h2 th:text="${greeting}"></h2>
 <form action="/purchase" method="get">
     <div>
-        <label for="powerBallPrice">파워볼 구매 금액을 입력해 주세요(단위: 달러).</label>
+        <label for="powerBallPrice" th:text="${ball_notice}"></label>
         <input name="powerBallPrice" id="powerBallPrice" type="text"
-               placeholder="파워볼 구매 금액은 2달러 단위로만 입력할 수 있습니다.">
+               th:placeholder="${ball_attention}">
     </div>
     <div>
-        <label for="powerPlayPrice">파워 플레이 금액을 입력해 주세요(단위: 달러).</label>
+        <label for="powerPlayPrice" th:text="${play_notice}"></label>
         <input name="powerPlayPrice" id="powerPlayPrice" type="text"
-               placeholder="파워 플레이 금액은 1달러 단위로만 입력할 수 있으며 파워 플레이 횟수는 파워볼 구매 수량을 초과할 수 없습니다.">
+               th:placeholder="${play_attention}">
     </div>
     <div>
         <input type="submit" value="결제하기">
