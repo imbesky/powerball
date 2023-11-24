@@ -3,6 +3,7 @@ package powerball.repository;
 import org.springframework.stereotype.Repository;
 import powerball.domain.BoughtPowerBalls;
 import powerball.domain.Purchase;
+import powerball.domain.Result;
 import powerball.domain.WinPowerBall;
 
 @Repository
@@ -12,6 +13,7 @@ public class DbRepository {
     private Purchase purchase;
     private WinPowerBall winPowerBall;
     private BoughtPowerBalls boughtPowerBalls;
+    private Result result;
 
     public void savePurchase(final Purchase purchase) {
         this.purchase = purchase;
@@ -22,11 +24,23 @@ public class DbRepository {
         this.winPowerBall = winPowerBall;
     }
 
+    public void saveResult(final Result result) {
+        this.result = result;
+    }
+
+    public Purchase inquirePurchase() {
+        return purchase;
+    }
+
     public BoughtPowerBalls inquireBoughtPowerBalls() {
         return boughtPowerBalls;
     }
 
     public WinPowerBall inquireWinPowerBall() {
         return winPowerBall;
+    }
+
+    public Result inquireResult() {
+        return result;
     }
 }

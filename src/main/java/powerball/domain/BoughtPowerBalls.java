@@ -33,6 +33,10 @@ public class BoughtPowerBalls {
         return powerPlay;
     }
 
+    public BoughtPowerBall numberDetail(final int index) {
+        return balls.get(index);
+    }
+
     public BoughtPowerBallsDto toDto() {
         return BoughtPowerBallsDto.from(balls);
     }
