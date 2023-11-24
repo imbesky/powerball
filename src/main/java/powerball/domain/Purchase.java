@@ -16,8 +16,8 @@ public class Purchase {
     public Purchase(final String powerBallPrice, final String powerPlayPrice) {
         validatePowerBallPrice(powerBallPrice);
         this.powerBallPrice = Integer.parseInt(powerBallPrice);
-        validatePowerPlayPrice(powerBallPrice);
-        this.powerPlayPrice = Integer.parseInt(powerBallPrice);
+        validatePowerPlayPrice(powerPlayPrice);
+        this.powerPlayPrice = Integer.parseInt(powerPlayPrice);
     }
 
     public static Purchase from(final PurchaseDto purchaseDto) {
