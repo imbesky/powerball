@@ -5,6 +5,7 @@ import static powerball.constant.Format.INPUT_POWER_BALL_PURCHASE_PRICE;
 import static powerball.constant.Format.INPUT_POWER_PLAY_PURCHASE_PRICE;
 import static powerball.constant.Format.POWER_BALL_PRICE_ATTENTION;
 import static powerball.constant.Format.POWER_PLAY_PRICE_ATTENTION;
+import static powerball.constant.Format.PURCHASE;
 import static powerball.constant.Price.POWER_BALL;
 import static powerball.constant.Price.POWER_PLAY;
 
@@ -31,6 +32,7 @@ public class PurchaseController {
         model.addAttribute("play_notice", INPUT_POWER_PLAY_PURCHASE_PRICE);
         model.addAttribute("ball_attention", String.format(POWER_BALL_PRICE_ATTENTION, POWER_BALL.priceUnit()));
         model.addAttribute("play_attention", String.format(POWER_PLAY_PRICE_ATTENTION, POWER_PLAY.priceUnit()));
+        model.addAttribute("purchase", PURCHASE);
 
     }
 
@@ -43,5 +45,5 @@ public class PurchaseController {
         }
         return "/check";
     }
-    
+
 }

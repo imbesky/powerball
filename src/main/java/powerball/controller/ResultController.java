@@ -3,6 +3,7 @@ package powerball.controller;
 import static powerball.constant.Format.BOUGHT_NUMBER_RESULT;
 import static powerball.constant.Format.BOUGHT_RESULT_DETAIL;
 import static powerball.constant.Format.EARNING_RATIO;
+import static powerball.constant.Format.INPUT_AND_INQUIRE;
 import static powerball.constant.Format.PRICE_FORMAT;
 import static powerball.constant.Format.WIN_STATISTICS;
 
@@ -30,6 +31,7 @@ public class ResultController {
                 purchaseResult.boughtPowerPlayNumber()));
         model.addAttribute("boughtBalls", resultService.boughtResult().boughtPowerBalls());
         model.addAttribute("ballsFormat", BOUGHT_RESULT_DETAIL);
+        model.addAttribute("inputToInquire", INPUT_AND_INQUIRE);
     }
 
     @GetMapping("/result")

@@ -3,6 +3,7 @@ package powerball.controller;
 import static powerball.constant.Format.INPUT_EXAMPLE;
 import static powerball.constant.Format.INPUT_RED_POWER_BALL;
 import static powerball.constant.Format.INPUT_WHITE_BALL;
+import static powerball.constant.Format.INQUIRE;
 import static powerball.constant.Format.WIN_NUMBER_INPUT_HEADER;
 
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,7 @@ public class WinNumberController {
         model.addAttribute("whiteBallNotice", INPUT_WHITE_BALL);
         model.addAttribute("redPowerBallNotice", INPUT_RED_POWER_BALL);
         model.addAttribute("example", INPUT_EXAMPLE);
+        model.addAttribute("inquire", INQUIRE);
     }
 
     @GetMapping("/win-input")
