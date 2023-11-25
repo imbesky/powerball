@@ -1,23 +1,19 @@
 package powerball.domain;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+import powerball.constant.PowerPlay;
 
 public class BoughtPowerBall {
-    private static final int DEFAULT_MULTIPLIER_NUMBER = 1;
-    private static final List<Integer> POWER_PLAY = Arrays.asList(2, 3, 4, 5, 10);
     private final WhiteBall whiteBalls = WhiteBall.createWhiteBalls();
     private final RedPowerBall redPowerBall = RedPowerBall.createRedPowerBall();
     private final int multiplierNumber;
 
     public BoughtPowerBall(final boolean isPowerPlay) {
         if (isPowerPlay) {
-            final Random random = new Random();
-            multiplierNumber = POWER_PLAY.get(random.nextInt(POWER_PLAY.size()));
+            multiplierNumber = PowerPlay.randomRate();
             return;
         }
-        multiplierNumber = DEFAULT_MULTIPLIER_NUMBER;
+        multiplierNumber = PowerPlay.DEFAULT_MULTIPLIER_NUMBER;
     }
 
     public List<Integer> whiteBallsDetail() {

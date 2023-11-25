@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import powerball.constant.Ball;
+import powerball.constant.PowerPlay;
 import powerball.domain.dto.PurchaseResultDto;
 import powerball.service.ResultService;
 
@@ -36,7 +36,7 @@ public class ResultController {
         model.addAttribute("whiteBall", BOUGHT_WHITE_BALL);
         model.addAttribute("redPowerBall", BOUGHT_RED_POWER_BALL);
         model.addAttribute("powerPlay", BOUGHT_POWER_PLAY);
-        model.addAttribute("initialValue", Ball.INITIAL_MULTIPLIER_NUMBER);
+        model.addAttribute("initialValue", PowerPlay.DEFAULT_MULTIPLIER_NUMBER);
         model.addAttribute("inputToInquire", INPUT_AND_INQUIRE);
     }
 
