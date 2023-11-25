@@ -10,6 +10,7 @@ import powerball.exception.InvalidPurchaseException;
 import powerball.exception.NotNumericException;
 
 public class Purchase {
+    private final static int MIN = 0;
     private final int powerBallPrice;
     private final int powerPlayPrice;
 
@@ -33,7 +34,8 @@ public class Purchase {
     }
 
     private void validPowerBallPrice(final int price) {
-        if (price % POWER_BALL.priceUnit() != PROPER_REMAINDER) {
+        if (price <= MIN
+                || price % POWER_BALL.priceUnit() != PROPER_REMAINDER) {
             throw new InvalidPurchaseException();
         }
     }
@@ -47,10 +49,9 @@ public class Purchase {
     }
 
     private void validPowerPlayPrice(final int price) {
-        if (price % POWER_PLAY.priceUnit() != PROPER_REMAINDER) {
-            throw new InvalidPurchaseException();
-        }
-        if (powerBallPrice / POWER_BALL.priceUnit() < price / POWER_PLAY.priceUnit()) {
+        if (price <= MIN
+                || price % POWER_PLAY.priceUnit() != PROPER_REMAINDER
+                || powerBallPrice / POWER_BALL.priceUnit() < price / POWER_PLAY.priceUnit()) {
             throw new InvalidPurchaseException();
         }
     }
