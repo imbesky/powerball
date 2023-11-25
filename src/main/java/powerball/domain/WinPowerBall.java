@@ -28,7 +28,7 @@ public class WinPowerBall {
         return new WinPowerBall(winPowerBallDto.whiteBalls(), winPowerBallDto.redPowerBall());
     }
 
-    private static void whiteBallValidate(final List<String> numbers) {
+    private void whiteBallValidate(final List<String> numbers) {
         if (numbers.size() != WHITE_BALL.getProperLength()) {
             throw new InvalidLengthException();
         }
@@ -43,7 +43,7 @@ public class WinPowerBall {
         inRedPowerBallRange(Integer.parseInt(number));
     }
 
-    private static void isNumeric(final String number) {
+    private void isNumeric(final String number) {
         try {
             Integer.parseInt(number);
         } catch (NumberFormatException e) {
@@ -51,7 +51,7 @@ public class WinPowerBall {
         }
     }
 
-    private static void inWhiteBallRange(final int number) {
+    private void inWhiteBallRange(final int number) {
         if (number < WHITE_BALL.getMin() || number > WHITE_BALL.getMax()) {
             throw new OutOfRangeException();
         }
