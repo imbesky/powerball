@@ -3,6 +3,7 @@ package powerball.constant;
 public enum Ball {
     WHITE_BALL(1, 69, 5),
     RED_POWER_BALL(1, 26, 1);
+    public static final int INITIAL_MULTIPLIER_NUMBER = 1;
 
     private final int min;
     private final int max;

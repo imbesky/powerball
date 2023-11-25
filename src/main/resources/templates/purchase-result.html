@@ -8,10 +8,10 @@
 <h2 th:text="${purchaseResult}"></h2>
 <div>
     <div th:each="boughtBall : ${boughtBalls}">
-        <h4 th:text="${T(java.lang.String).format(ballsFormat,
-        boughtBall.whiteBallsDetail(),
-        boughtBall.redPowerBallDetail(),
-        boughtBall.multiplyRate())}"></h4>
+        <span th:text="${T(java.lang.String).format(whiteBall, boughtBall.whiteBallsDetail())}"></span>
+        <span th:text="${T(java.lang.String).format(redPowerBall, boughtBall.redPowerBallDetail())}"></span>
+        <span th:if="${boughtBall.multiplyRate() != initialValue}"
+              th:text="${T(java.lang.String).format(powerPlay, boughtBall.multiplyRate())}"></span>
     </div>
 </div>
 <a href="/winning-number">
