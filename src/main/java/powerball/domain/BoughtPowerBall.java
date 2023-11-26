@@ -1,5 +1,7 @@
 package powerball.domain;
 
+import static powerball.constant.PowerPlay.DEFAULT_MULTIPLIER_NUMBER;
+
 import java.util.List;
 import powerball.constant.PowerPlay;
 
@@ -13,7 +15,7 @@ public class BoughtPowerBall {
             multiplierNumber = PowerPlay.randomRate();
             return;
         }
-        multiplierNumber = PowerPlay.DEFAULT_MULTIPLIER_NUMBER;
+        multiplierNumber = DEFAULT_MULTIPLIER_NUMBER;
     }
 
     public List<Integer> whiteBallsDetail() {
