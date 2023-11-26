@@ -15,6 +15,7 @@ public enum PrizeNotice {
     SEVENTH(7, "화이트볼 2개 일치, 레드 파워볼 일치 (7달러) - %d개"),
     EIGHTH(8, "화이트볼 1개 일치, 레드 파워볼 일치 (4달러) - %d개"),
     NINTH(9, "레드 파워볼 일치 (4달러) - %d개");
+    public final static String POWER_PLAY_DETAIL = "x%d %d개";
     private final int grade;
     private final String notice;
 
@@ -27,7 +28,7 @@ public enum PrizeNotice {
             Collections.unmodifiableMap(Stream
                     .of(values())
                     .collect(Collectors
-                            .toMap(PrizeNotice -> PrizeNotice.getGrade(), PrizeNotice -> PrizeNotice)));
+                            .toMap(PrizeNotice::getGrade, PrizeNotice -> PrizeNotice)));
 
     private int getGrade() {
         return grade;
@@ -37,7 +38,7 @@ public enum PrizeNotice {
         return notice;
     }
 
-    public static PrizeNotice findByGrade(final int grade) {
-        return notices.get(grade);
+    public static String findNoticeByGrade(final int grade) {
+        return notices.get(grade).getNotice();
     }
 }

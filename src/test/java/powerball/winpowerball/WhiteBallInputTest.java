@@ -69,7 +69,7 @@ public class WhiteBallInputTest {
         final WinPowerBall winPowerBall = new WinPowerBall(white, red);
         final List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 6, 7));
 
-        assertThat(winPowerBall.checkWhiteBalls(numbers)).isEqualTo(3);
+        assertThat(winPowerBall.checkMatchedWhiteBall(numbers)).isEqualTo(3);
     }
 
 }

@@ -3,6 +3,8 @@ package powerball.constant;
 public class Format {
     public static final String BLANK = " ";
     public static final String EMPTY = "";
+    public static final String COMMA = ",";
+    public static final String ROUND_BRACKET = "(%s)";
     public static final String GREETINGS = "파워볼 판매점에 오신 것을 환영합니다!";
     public static final String INPUT_POWER_BALL_PURCHASE_PRICE = "파워볼 구입 금액을 입력해 주세요.";
     public static final String INPUT_POWER_PLAY_PURCHASE_PRICE = "파워 플레이 금액을 입력해 주세요.";

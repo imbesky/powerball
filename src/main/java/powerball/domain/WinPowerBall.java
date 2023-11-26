@@ -63,7 +63,7 @@ public class WinPowerBall {
         }
     }
 
-    public int checkWhiteBalls(final List<Integer> inputNumbers) {
+    public int checkMatchedWhiteBall(final List<Integer> inputNumbers) {
         int matchedNumber = 0;
         for (int number : inputNumbers) {
             matchedNumber += contains(number);
@@ -78,8 +78,11 @@ public class WinPowerBall {
         return FALSE;
     }
 
-    public boolean checkRedPowerBall(final int number) {
-        return redPowerBall.number() == number;
+    public int checkMatchedRedPowerBall(final int number) {
+        if (redPowerBall.number() == number) {
+            return TRUE;
+        }
+        return FALSE;
     }
 
 }
