@@ -8,12 +8,12 @@ import static powerball.constant.Format.EARNING_RATIO;
 import static powerball.constant.Format.INPUT_AND_INQUIRE;
 import static powerball.constant.Format.PRICE_FORMAT;
 import static powerball.constant.Format.WIN_STATISTICS;
+import static powerball.constant.PowerPlay.DEFAULT_MULTIPLIER_NUMBER;
 
 import java.text.DecimalFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import powerball.constant.PowerPlay;
 import powerball.domain.dto.PurchaseResultDto;
 import powerball.service.ResultService;
 
@@ -36,7 +36,7 @@ public class ResultController {
         model.addAttribute("whiteBall", BOUGHT_WHITE_BALL);
         model.addAttribute("redPowerBall", BOUGHT_RED_POWER_BALL);
         model.addAttribute("powerPlay", BOUGHT_POWER_PLAY);
-        model.addAttribute("initialValue", PowerPlay.DEFAULT_MULTIPLIER_NUMBER);
+        model.addAttribute("initialValue", DEFAULT_MULTIPLIER_NUMBER);
         model.addAttribute("inputToInquire", INPUT_AND_INQUIRE);
     }
 
@@ -44,7 +44,7 @@ public class ResultController {
     public void finalResult(final Model model) {
         resultService.saveResult();
         model.addAttribute("header", WIN_STATISTICS);
-        model.addAttribute("results", resultService.winResult());
+        model.addAttribute("results", resultService.winResult().results());
         final DecimalFormat decimalFormat = new DecimalFormat(PRICE_FORMAT);
         model.addAttribute("earningRatio", String.format(
                 EARNING_RATIO,

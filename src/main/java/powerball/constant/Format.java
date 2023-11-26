@@ -12,7 +12,7 @@ public class Format {
     public static final String POWER_PLAY_PRICE_ATTENTION = "파워 플레이 금액은 %d달러 단위로만 입력할 수 있으며 파워 플레이 횟수는 파워볼 구매 수량을 초과할 수 없습니다.";
     public static final String PURCHASE = "결제하기";
     public static final String BOUGHT_NUMBER_RESULT = "파워볼 %d개, 파워 플레이 %d번을 구매했습니다.";
-    public static final String BOUGHT_WHITE_BALL = "화이트볼: %s";
+    public static final String BOUGHT_WHITE_BALL = "화이트볼: ";
     public static final String BOUGHT_RED_POWER_BALL = "레드 파워볼: %d";
     public static final String BOUGHT_POWER_PLAY = "파워 플레이: x%d";
     public static final String INPUT_AND_INQUIRE = "당첨 번호 입력하고 결과 조회하기";
@@ -23,7 +23,7 @@ public class Format {
     public static final String INQUIRE = "조회하기";
     public static final String EXCEPTION_NOTICE = "오류! ";
     public static final String REDIRECT = "이전 페이지로 돌아가기";
-    public static final String WIN_STATISTICS = "당첨 통계\n---";
+    public static final String WIN_STATISTICS = "당첨 통계";
     public static final String EARNING_RATIO = "총 수익률은 %s 입니다.";
     public static final String PRICE_FORMAT = "###,###.#%";
 }
