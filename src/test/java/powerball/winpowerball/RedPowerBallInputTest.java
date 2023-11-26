@@ -55,6 +55,6 @@ public class RedPowerBallInputTest {
         final WinPowerBall winPowerBall = new WinPowerBall(white, red);
         final int compare = 1;
 
-        assertThat(winPowerBall.checkMatchedRedPowerBall(compare)).isEqualTo(true);
+        assertThat(winPowerBall.checkMatchedRedPowerBall(compare)).isEqualTo(1);
     }
 }
