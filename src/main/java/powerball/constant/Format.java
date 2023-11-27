@@ -24,5 +24,5 @@ public class Format {
     public static final String REDIRECT = "이전 페이지로 돌아가기";
     public static final String WIN_STATISTICS = "당첨 통계";
     public static final String EARNING_RATIO = "총 수익률은 %s 입니다.";
-    public static final String PRICE_FORMAT = "###,###.#%";
+    public static final String PRICE_FORMAT = "###,##0.0%";
 }
