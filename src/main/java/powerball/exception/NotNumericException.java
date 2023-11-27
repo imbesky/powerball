@@ -11,7 +11,5 @@ public class NotNumericException extends PowerBallException {
         super(TYPE.getMessage());
     }
 
-    public String errorPage() {
-        return TYPE.getUrl();
-    }
+    
 }

@@ -10,8 +10,4 @@ public class OutOfRangeException extends PowerBallException {
     public OutOfRangeException() {
         super(TYPE.getMessage());
     }
-
-    public String errorPage() {
-        return TYPE.getUrl();
-    }
 }

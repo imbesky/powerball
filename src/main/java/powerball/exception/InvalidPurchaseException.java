@@ -10,8 +10,4 @@ public class InvalidPurchaseException extends PowerBallException {
     public InvalidPurchaseException() {
         super(TYPE.getMessage());
     }
-
-    public String errorPage() {
-        return TYPE.getUrl();
-    }
 }

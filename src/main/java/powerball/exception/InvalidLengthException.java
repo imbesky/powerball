@@ -10,8 +10,4 @@ public class InvalidLengthException extends PowerBallException {
     public InvalidLengthException() {
         super(TYPE.getMessage());
     }
-
-    public String errorPage() {
-        return TYPE.getUrl();
-    }
 }

@@ -9,13 +9,16 @@ import static powerball.constant.Format.WIN_NUMBER_INPUT_HEADER;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import powerball.constant.Exception;
 import powerball.domain.dto.WinPowerBallDto;
 import powerball.exception.PowerBallException;
 import powerball.service.WinNumberInputService;
 
 @Controller
 public class WinNumberController {
+    private final static String REDIRECT = "redirect:/";
     private final WinNumberInputService winNumberInputService;
 
     public WinNumberController(WinNumberInputService winNumberInputService) {
@@ -31,14 +34,15 @@ public class WinNumberController {
         model.addAttribute("inquire", INQUIRE);
     }
 
-    @GetMapping("/win-input")
-    public String purchaseInput(@RequestParam final WinPowerBallDto winPowerBallDto) {
+    @PostMapping("/win-input")
+    public String purchaseInput(final WinPowerBallDto winPowerBallDto, final RedirectAttributes redirectAttributes) {
         try {
             winNumberInputService.saveWinPowerBall(winPowerBallDto);
         } catch (PowerBallException exception) {
-            return exception.errorPage();
+            redirectAttributes.addAttribute("detail", exception.getMessage());
+            return REDIRECT.concat(Exception.URL);
         }
-        return "/result";
+        return REDIRECT.concat("result");
     }
 
 }

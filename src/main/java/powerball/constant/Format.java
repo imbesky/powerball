@@ -21,7 +21,6 @@ public class Format {
     public static final String INPUT_RED_POWER_BALL = "레드 파워볼을 입력해 주세요.";
     public static final String INPUT_EXAMPLE = "입력 예시: 1,2,3,4,5";
     public static final String INQUIRE = "조회하기";
-    public static final String EXCEPTION_NOTICE = "오류! ";
     public static final String REDIRECT = "이전 페이지로 돌아가기";
     public static final String WIN_STATISTICS = "당첨 통계";
     public static final String EARNING_RATIO = "총 수익률은 %s 입니다.";
