@@ -1,0 +1,23 @@
+.container {
+    display: grid;
+    grid-template-rows: 3fr auto 2fr;
+    grid-template-columns: 1fr 5fr 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.item {
+    grid-column: 2 / 3;
+}
+
+.result {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: aliceblue;
+    border: solid 1vh white;
+}
+
+.result span {
+    width: 100%;
+}

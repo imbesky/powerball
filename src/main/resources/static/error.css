@@ -1,0 +1,17 @@
+.container {
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.item {
+    grid-column: 2 / 3;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+#message {
+    background-color: black;
+    color: white;
+}

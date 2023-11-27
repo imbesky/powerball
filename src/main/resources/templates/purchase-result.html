@@ -2,18 +2,23 @@
 <html lang="kr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Check</title>
+    <title>Purchase Result</title>
+    <link href="/result.css" rel="stylesheet">
 </head>
-<body>
-<h2 th:text="${purchaseResult}"></h2>
-<div>
-    <div th:each="boughtBall : ${boughtBalls}">
+<body class="container">
+<div class="item">
+    <h2 th:text="${purchaseResult}"></h2>
+</div>
+<div class="item">
+    <div th:each="boughtBall : ${boughtBalls}" class="result">
         <span th:text="${whiteBall + boughtBall.whiteBallsDetail().toString()}"></span>
         <span th:text="${T(java.lang.String).format(redPowerBall, boughtBall.redPowerBallDetail())}"></span>
         <span th:if="${boughtBall.multiplyRate() != initialValue}"
               th:text="${T(java.lang.String).format(powerPlay, boughtBall.multiplyRate())}"></span>
     </div>
 </div>
-<a href="/winning-number" th:text="${inputToInquire}"></a>
+<div class="item">
+    <a href="/winning-number" th:text="${inputToInquire}"></a>
+</div>
 </body>
 </html>

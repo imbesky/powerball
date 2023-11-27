@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Winning Number Input</title>
+    <link href="/input.css" rel="stylesheet">
 </head>
-<body>
+<body class="container">
 <h2 th:text="${header}"></h2>
 <form action="/win-input" method="post">
-    <div>
+    <div class="input">
         <label for="whiteBalls" th:text="${whiteBallNotice}"></label>
         <input name="whiteBalls" id="whiteBalls" type="text"
                th:placeholder="${example}">
     </div>
-    <div>
+    <div class="input">
         <label for="redPowerBall" th:text="${redPowerBallNotice}"></label>
         <input name="redPowerBall" id="redPowerBall" type="text">
     </div>

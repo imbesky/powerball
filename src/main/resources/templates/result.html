@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Result</title>
+    <link href="/result.css" rel="stylesheet">
 </head>
-<body>
-<div>
+<body class="container">
+<div class="item">
     <h2 th:text="${header}"></h2>
-    <div th:each="result : ${results}">
+</div>
+<div class="item">
+    <div th:each="result : ${results}" class="result">
         <span th:text="${result}"></span>
     </div>
+</div>
+<div class="item">
     <h3 th:text="${earningRatio}"></h3>
 </div>
 </body>
